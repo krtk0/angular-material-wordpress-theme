@@ -9,6 +9,8 @@
  * @package angular-material-theme
  */
 
+global $material;
+var_dump($material['opt-palette-color']);
 ?>
 
 	</md-content><!-- #content -->
@@ -39,13 +41,19 @@
 	/**
 	 * You must include the dependency on 'ngMaterial'
 	 */
-	angular.module('MaterialThemeApp', ['ngMaterial']).controller('MenuCtrl', function(){
-		var originatorEv;
-		this.openMenu = function($mdOpenMenu, ev) {
-			originatorEv = ev;
-			$mdOpenMenu(ev);
-		};
-	});
+	angular.module('MaterialThemeApp', ['ngMaterial'])
+		.config(function($mdThemingProvider) {
+			$mdThemingProvider.theme('default')
+				.primaryPalette('<?php echo $material['opt-palette-color'];?>')
+				.accentPalette('orange');
+		})
+		.controller('MenuCtrl', function(){
+			var originatorEv;
+			this.openMenu = function($mdOpenMenu, ev) {
+				originatorEv = ev;
+				$mdOpenMenu(ev);
+			};
+		});
 </script>
 <?php wp_footer(); ?>
 

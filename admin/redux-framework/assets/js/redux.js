@@ -102,7 +102,9 @@
                     data: $data
                 },
                 error: function( response ) {
-                    if ( !window.console ) console = {};
+                    if ( !window.console ) { //noinspection JSUnresolvedVariable
+                        console = {};
+                    }
                     console.log = console.log || function( name, data ) {
                     };
                     console.log( redux.ajax.console );
@@ -1438,10 +1440,12 @@
                     function() {
                         var el;
                         if ( $( '#redux-header' ).length > 0 ) {
-                            $( '#redux-header' ).append( '<div class="rAds"></div>' );
+                            // I don't want to look at ads sry
+                            // $( '#redux-header' ).append( '<div class="rAds"></div>' );
                             el = $( '#redux-header' );
                         } else {
-                            $('#customize-theme-controls ul').first().prepend('<li id="redux_rAds" class="accordion-section rAdsContainer" style="position: relative;"><div class="rAds"></div></li>');
+                            // I don't want to look at ads sry
+                            // $('#customize-theme-controls ul').first().prepend('<li id="redux_rAds" class="accordion-section rAdsContainer" style="position: relative;"><div class="rAds"></div></li>');
                             el = $( '#redux_rAds' );
                         }
 
