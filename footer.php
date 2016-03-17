@@ -10,7 +10,6 @@
  */
 
 global $material;
-var_dump($material['opt-palette-color']);
 ?>
 
 	</md-content><!-- #content -->
@@ -44,8 +43,8 @@ var_dump($material['opt-palette-color']);
 	angular.module('MaterialThemeApp', ['ngMaterial'])
 		.config(function($mdThemingProvider) {
 			$mdThemingProvider.theme('default')
-				.primaryPalette('<?php echo $material['opt-palette-color'];?>')
-				.accentPalette('orange');
+				.primaryPalette('<?php echo $material['primary_palette'];?>')
+				.accentPalette('<?php echo $material['accent_palette'];?>');
 		})
 		.controller('MenuCtrl', function(){
 			var originatorEv;

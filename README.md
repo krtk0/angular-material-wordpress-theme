@@ -4,5 +4,10 @@ A WordPress theme built with the [Angular Material Framework](https://material.a
 
 ![Screenshot](/screenshot.png "Optional Title")
 
-### Useful Links
-[Redux Global Arguments](https://docs.reduxframework.com/core/arguments/)
+## Useful Links
+### Redux
++ [Global Arguments](https://docs.reduxframework.com/core/arguments/)
++ [Field Types](https://docs.reduxframework.com/category/core/fields/)
+
+### WordPress
++ [Theme Development](https://codex.wordpress.org/Theme_Development)
