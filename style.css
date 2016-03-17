@@ -18,3 +18,7 @@ Underscores is distributed under the terms of the GNU GPL v2 or later.
 a {
   text-decoration: none;
 }
+
+#footer_content {
+  margin-top: 10px;
+}

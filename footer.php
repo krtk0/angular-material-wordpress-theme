@@ -13,13 +13,16 @@
 
 	</md-content><!-- #content -->
 
-	<footer id="colophon" class="site-footer" role="contentinfo">
-		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'angular-material' ) ); ?>"><?php printf( esc_html__( 'Proudly powered by %s', 'angular-material' ), 'WordPress' ); ?></a>
-			<span class="sep"> | </span>
-			<?php printf( esc_html__( 'Theme: %1$s by %2$s.', 'angular-material' ), 'angular-material', '<a href="http://jamessweeney.rocks" rel="designer">James Sweeney III</a>' ); ?>
+	<md-toolbar class="md-accent md-tall">
+		<div id="footer_content" layout="row" layout-align="space-between center">
+			<div layout="row" layout-align="start center">
+				<md-button href="<?php echo esc_url(__('https://wordpress.org/', 'angular-material')); ?>"><?php printf(esc_html__('Proudly powered by %s', 'angular-material'), 'WordPress'); ?></md-button>
+			</div>
+			<div layout="row" layout-align="end center">
+				<span style="font-size: .8em;">angular-material by</span><md-button href="http://jamessweeney.rocks" rel="designer">James Sweeney III</md-button>
+			</div>
 		</div><!-- .site-info -->
-	</footer><!-- #colophon -->
+	</md-toolbar><!-- #colophon -->
 </div><!-- #page -->
 
 <!-- Angular Material requires Angular.js Libraries -->
