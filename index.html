@@ -1,56 +1,102 @@
 <!DOCTYPE html>
 <html lang="en-us">
-  <head>
+<head>
     <meta charset="UTF-8">
     <title>Angular Material Wordpress Theme by wildwestriverrider</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
-  </head>
-  <body>
-    <section class="page-header">
-      <h1 class="project-name">Angular Material Wordpress Theme</h1>
-      <h2 class="project-tagline">A WordPress theme based on Angular Material Design</h2>
-      <a href="https://github.com/wildwestriverrider/angular-material-wordpress-theme" class="btn">View on GitHub</a>
-      <a href="https://github.com/wildwestriverrider/angular-material-wordpress-theme/zipball/master" class="btn">Download .zip</a>
-      <a href="https://github.com/wildwestriverrider/angular-material-wordpress-theme/tarball/master" class="btn">Download .tar.gz</a>
-    </section>
+    <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.css">
+</head>
+<body ng-app="GithubPagesApp">
+<md-toolbar class="page-header" layout-padding layout="row" layout-align="space-between center">
+    <div layout="column">
+        <h1 class="project-name">Angular Material Wordpress Theme</h1>
+        <h2 class="project-tagline">A WordPress theme based on Angular Material Design</h2>
+    </div>
+    <div layout="row">
+        <md-button href="https://github.com/wildwestriverrider/angular-material-wordpress-theme" class="btn">View on
+            GitHub
+        </md-button>
+        <md-button href="https://github.com/wildwestriverrider/angular-material-wordpress-theme/zipball/master"
+                   class="btn">
+            Download .zip
+        </md-button>
+        <md-button href="https://github.com/wildwestriverrider/angular-material-wordpress-theme/tarball/master"
+                   class="btn">
+            Download .tar.gz
+        </md-button>
+    </div>
+</md-toolbar>
 
-    <section class="main-content">
-      <h1>
-<a id="angular-material-wordpress-theme" class="anchor" href="#angular-material-wordpress-theme" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Angular Material Wordpress Theme</h1>
+<md-content layout="column">
+    <md-subheader class="md-primary">Screenshot</md-subheader>
 
-<p>A WordPress theme built with the <a href="https://material.angularjs.org/">Angular Material Framework</a>, <a href="http://underscores.me/">Underscores</a> &amp; <a href="https://reduxframework.com/">Redux Framework</a>
-<img src="https://github.com/wildwestriverrider/angular-material-wordpress-theme/blob/master/screenshot.png?raw=true" alt="Screenshot"></p>
+    <div layout="row" layout-align="center start">
+        <img src="https://github.com/wildwestriverrider/angular-material-wordpress-theme/blob/master/screenshot.png?raw=true"
+             alt="Screenshot">
+    </div>
+    <div layout="row" layout-align="center start">
+        <div flex="80" layout="row" layout-align="start start">
+            <div layout="column"><h2>
+                <a id="useful-links" class="anchor" href="#useful-links" aria-hidden="true"></a>Useful Links
+            </h2>
 
-<h2>
-<a id="useful-links" class="anchor" href="#useful-links" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Useful Links</h2>
+                <h3>
+                    <a id="redux" class="anchor" href="#redux" aria-hidden="true"></a>Redux
+                </h3>
 
-<h3>
-<a id="redux" class="anchor" href="#redux" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Redux</h3>
+                <md-list>
+                    <md-list-item>
+                        <md-button href="https://docs.reduxframework.com/core/arguments/">Global Arguments
+                        </md-button>
+                    </md-list-item>
+                    <md-list-item>
+                        <md-button href="https://docs.reduxframework.com/category/core/fields/">Field Types
+                        </md-button>
+                    </md-list-item>
+                </md-list>
 
-<ul>
-<li><a href="https://docs.reduxframework.com/core/arguments/">Global Arguments</a></li>
-<li><a href="https://docs.reduxframework.com/category/core/fields/">Field Types</a></li>
-</ul>
+                <h3>
+                    <a id="wordpress" class="anchor" href="#wordpress" aria-hidden="true"><span aria-hidden="true"
+                                                                                                class="octicon octicon-link"></span></a>WordPress
+                </h3>
 
-<h3>
-<a id="wordpress" class="anchor" href="#wordpress" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>WordPress</h3>
+                <md-list>
+                    <md-list-item><md-button href="https://codex.wordpress.org/Theme_Development">Theme Development</md-button>
+                    </md-list-item>
+                </md-list>
 
-<ul>
-<li><a href="https://codex.wordpress.org/Theme_Development">Theme Development</a></li>
-</ul>
+                <footer class="site-footer">
+                            <span class="site-footer-owner">
+                                <a href="https://github.com/wildwestriverrider/angular-material-wordpress-theme">
+                                    Angular Material Wordpress Theme
+                                </a> is maintained by
+                                <a href="https://github.com/wildwestriverrider">
+                                    wildwestriverrider
+                                </a>.
+                            </span>
+                </footer>
+            </div>
+        </div>
+    </div>
+</md-content>
 
-      <footer class="site-footer">
-        <span class="site-footer-owner"><a href="https://github.com/wildwestriverrider/angular-material-wordpress-theme">Angular Material Wordpress Theme</a> is maintained by <a href="https://github.com/wildwestriverrider">wildwestriverrider</a>.</span>
+<!-- Angular Material requires Angular.js Libraries -->
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-aria.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-messages.min.js"></script>
 
-        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
-      </footer>
+<!-- Angular Material Library -->
+<script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.js"></script>
 
-    </section>
-
-  
-  </body>
+<!-- Your application bootstrap  -->
+<script type="text/javascript">
+    /**
+     * You must include the dependency on 'ngMaterial'
+     */
+    angular.module('GithubPagesApp', ['ngMaterial']);
+</script>
+</body>
 </html>
