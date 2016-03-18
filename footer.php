@@ -34,27 +34,14 @@ global $material;
 
 <!-- Angular Material Library -->
 <script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.js"></script>
-
-<!-- Your application bootstrap  -->
 <script type="text/javascript">
-	/**
-	 * You must include the dependency on 'ngMaterial'
-	 */
-	angular.module('MaterialThemeApp', ['ngMaterial'])
-		.config(function($mdThemingProvider) {
-			$mdThemingProvider.theme('default')
-				.primaryPalette('<?php echo $material['primary_palette'];?>')
-				.accentPalette('<?php echo $material['accent_palette'];?>');
-		})
-		.controller('MenuCtrl', function(){
-			var originatorEv;
-			this.openMenu = function($mdOpenMenu, ev) {
-				originatorEv = ev;
-				$mdOpenMenu(ev);
-			};
-		});
+	var settings = {
+		primary_palette: '<?php echo $material['primary_palette'];?>',
+		accent_palette: '<?php echo $material['accent_palette'];?>'
+	};
 </script>
+<!-- Your application bootstrap  -->
+<script type="text/javascript" src="<?php echo get_template_directory_uri();?>/js/main.js"></script>
 <?php wp_footer(); ?>
-
 </body>
 </html>

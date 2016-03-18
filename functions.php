@@ -7,6 +7,11 @@
  * @package angular-material-theme
  */
 
+require_once get_template_directory().'/class/class_theme_customizer.php';
+require_once get_template_directory().'/class/class_utility.php';
+
+$utility = new \angular\theme\utility();
+
 if ( ! function_exists( 'angular_material_setup' ) ) :
 /**
  * Sets up theme defaults and registers support for various WordPress features.
@@ -82,6 +87,8 @@ function angular_material_setup() {
 		'default-color' => 'ffffff',
 		'default-image' => '',
 	) ) );
+
+	new \angular\theme\themeCustomizer();
 }
 endif; // angular_material_setup
 add_action( 'after_setup_theme', 'angular_material_setup' );
@@ -122,10 +129,6 @@ add_action( 'widgets_init', 'angular_material_widgets_init' );
 function angular_material_scripts() {
 	wp_enqueue_style( 'angular-material-style', get_stylesheet_uri() );
 
-	wp_enqueue_script( 'angular-material-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
-
-	wp_enqueue_script( 'angular-material-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
-
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
@@ -133,29 +136,10 @@ function angular_material_scripts() {
 add_action( 'wp_enqueue_scripts', 'angular_material_scripts' );
 
 /**
- * Implement the Custom Header feature.
- */
-require get_template_directory() . '/inc/custom-header.php';
-
-/**
  * Custom template tags for this theme.
  */
 require get_template_directory() . '/inc/template-tags.php';
 
-/**
- * Custom functions that act independently of the theme templates.
- */
-require get_template_directory() . '/inc/extras.php';
-
-/**
- * Customizer additions.
- */
-require get_template_directory() . '/inc/customizer.php';
-
-/**
- * Load Jetpack compatibility file.
- */
-require get_template_directory() . '/inc/jetpack.php';
 
 /**
  *

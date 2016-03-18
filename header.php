@@ -9,7 +9,8 @@
  * @package angular-material-theme
  */
 require_once 'class/class_theme_menu_walker.php';
-?>
+global $material;?>
+
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
@@ -27,7 +28,7 @@ require_once 'class/class_theme_menu_walker.php';
 <div id="page" layout="column">
 	<md-toolbar layout="row" layout-align="space-between center">
 		<div class="site-branding" layout="column" layout-margin>
-			<?php if ( is_front_page() && is_home() ) : ?>
+			<?php if ( is_front_page() ) : ?>
 				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 			<?php else : ?>
 				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
@@ -35,7 +36,7 @@ require_once 'class/class_theme_menu_walker.php';
 			<div class="site-description"><?php bloginfo( 'description' ); ?></div>
 		</div><!-- .site-branding -->
 		<div ng-controller="MenuCtrl as ctrl"><?php
-			$menu_walker = new themeMenuWalker();
+			$menu_walker = new \angular\theme\themeMenuWalker();
 			// use the custom walker without wrapping items and return the items rather than echo
 			$menu = wp_nav_menu(
 				array(

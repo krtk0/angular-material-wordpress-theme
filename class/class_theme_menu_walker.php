@@ -1,6 +1,7 @@
 <?php
+namespace angular\theme;
 
-class themeMenuWalker extends Walker {
+class themeMenuWalker extends \Walker {
 
     var $db_fields = array (
         'parent' => 'post_parent',

@@ -7,6 +7,7 @@
  * @package angular-material-theme
  */
 
+$utility = new \angular\theme\utility();
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -14,7 +15,7 @@
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 
 		<div class="entry-meta">
-			<?php angular_material_posted_on(); ?>
+			<?php $utility->postedOn(); ?>
 		</div><!-- .entry-meta -->
 	</header><!-- .entry-header -->
 
@@ -29,7 +30,7 @@
 	</div><!-- .entry-content -->
 
 	<footer class="entry-footer">
-		<?php angular_material_entry_footer(); ?>
+		<?php $utility->entryFooter(); ?>
 	</footer><!-- .entry-footer -->
 </article><!-- #post-## -->
 

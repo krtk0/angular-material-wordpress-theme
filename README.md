@@ -11,3 +11,5 @@ A WordPress theme built with the [Angular Material Framework](https://material.a
 
 ### WordPress
 + [Theme Development](https://codex.wordpress.org/Theme_Development)
++ [Customizer API](https://codex.wordpress.org/Theme_Customization_API)
++ [Post Formats](https://developer.wordpress.org/themes/functionality/post-formats/)
