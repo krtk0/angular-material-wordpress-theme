@@ -15,7 +15,7 @@
 get_header(); ?>
 
 	<div id="primary" class="content-area" layout="column">
-		<div id="main" class="site-main" layout="row" layout-align="center center" layout-wrap>
+		<div id="main" class="site-main" layout="row" layout-align="center start" layout-wrap>
 
 		<?php if ( have_posts() ) : ?>
 

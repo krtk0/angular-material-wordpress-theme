@@ -1,6 +1,0 @@
-{
-  "name": "Angular Material Wordpress Theme",
-  "tagline": "A WordPress theme based on Angular Material Design",
-  "body": "# Angular Material Wordpress Theme\r\n\r\nA WordPress theme built with the [Angular Material Framework](https://material.angularjs.org/), [Underscores](http://underscores.me/) & [Redux Framework](https://reduxframework.com/)\r\n![Screenshot](https://github.com/wildwestriverrider/angular-material-wordpress-theme/blob/master/screenshot.png?raw=true)\r\n\r\n## Useful Links\r\n### Redux\r\n+ [Global Arguments](https://docs.reduxframework.com/core/arguments/)\r\n+ [Field Types](https://docs.reduxframework.com/category/core/fields/)\r\n\r\n### WordPress\r\n+ [Theme Development](https://codex.wordpress.org/Theme_Development)",
-  "note": "Don't delete this file! It's used internally to help with page regeneration."
-}

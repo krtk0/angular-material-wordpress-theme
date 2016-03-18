@@ -28,12 +28,15 @@ $utility = new \angular\theme\utility(); ?>
 	</md-card-title>
 	<md-card-content layout="column">
 		<div layout="column" layout-gt-md="row">
-			<div class="md-media-large card-media"><?php the_post_thumbnail('thumbnail'); ?></div><?php
-			the_content(sprintf(
+			<div class="md-media-large card-media"><?php the_post_thumbnail('thumbnail'); ?></div>
+			<div layout-padding><?php
+				the_content(sprintf(
 				/* translators: %s: Name of current post. */
-				wp_kses(__('Continue reading %s <span class="meta-nav">&rarr;</span>', 'angular-material'), array('span' => array('class' => array()))),
-				the_title('<span class="screen-reader-text">"', '"</span>', false)
-			));
+					wp_kses(__('Continue reading %s <span class="meta-nav">&rarr;</span>', 'angular-material'), array('span' => array('class' => array()))),
+					the_title('<span class="screen-reader-text">"', '"</span>', false)
+				)); ?>
+			</div>
+			<?php
 
 			wp_link_pages(array(
 				'before' => '<div class="page-links">' . esc_html__('Pages:', 'angular-material'),
