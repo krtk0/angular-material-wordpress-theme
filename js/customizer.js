@@ -34,4 +34,12 @@
             });
         });
     });
+    // Footer font color.
+    wp.customize('footer_font_color', function (value) {
+        value.bind(function (to) {
+            $('#footer_content').css({
+                'color': to
+            });
+        });
+    });
 })(jQuery);

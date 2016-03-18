@@ -26,9 +26,9 @@ global $material;?>
 
 <body <?php body_class(); ?> ng-app="MaterialThemeApp">
 <div id="page" layout="column">
-	<md-toolbar layout="row" layout-align="space-between center">
+	<md-toolbar layout="row" layout-xs="column" layout-align="space-between center">
 		<div class="site-branding" layout="column" layout-margin>
-			<?php if ( is_front_page() ) : ?>
+			<?php if ( is_front_page() || is_home()) : ?>
 				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 			<?php else : ?>
 				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>

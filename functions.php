@@ -7,6 +7,7 @@
  * @package angular-material-theme
  */
 
+require_once get_template_directory() . '/class/class_theme.php';
 require_once get_template_directory() . '/class/class_theme_customizer.php';
 require_once get_template_directory() . '/class/class_utility.php';
 
@@ -22,6 +23,7 @@ if (!function_exists('angular_material_setup')) :
      */
     function angular_material_setup()
     {
+        new \angular\theme\theme();
         new \angular\theme\themeCustomizer();
     }
 endif; // angular_material_setup

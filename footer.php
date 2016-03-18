@@ -15,7 +15,7 @@ global $material;
 	</md-content><!-- #content -->
 
 	<md-toolbar class="md-accent md-tall">
-		<div id="footer_content" layout="row" layout-align="space-between center">
+		<div id="footer_content" layout="row" layout-xs="column" layout-align="space-between center">
 			<div layout="row" layout-align="start center">
 				<md-button href="<?php echo esc_url(__('https://wordpress.org/', 'angular-material')); ?>"><?php printf(esc_html__('Proudly powered by %s', 'angular-material'), 'WordPress'); ?></md-button>
 			</div>

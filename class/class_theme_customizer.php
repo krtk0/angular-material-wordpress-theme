@@ -10,65 +10,6 @@ class themeCustomizer
         add_action('customize_register', array($this, 'customize_register'));
         add_action('customize_preview_init', array($this, 'customize_preview_js'));
         add_action('wp_head', array($this, 'css'));
-        add_action('widgets_init', 'widgets_init');
-        add_action('wp_enqueue_scripts', 'scripts');
-
-        require get_template_directory() . '/admin/admin-init.php';
-
-        /*
-         * Make theme available for translation.
-         * Translations can be filed in the /languages/ directory.
-         * If you're building a theme based on angular-material-theme, use a find and replace
-         * to change 'angular-material' to the name of your theme in all the template files.
-         */
-        load_theme_textdomain('angular-material', get_template_directory() . '/languages');
-
-        // Add default posts and comments RSS feed links to head.
-        add_theme_support('automatic-feed-links');
-
-        /*
-         * Let WordPress manage the document title.
-         * By adding theme support, we declare that this theme does not use a
-         * hard-coded <title> tag in the document head, and expect WordPress to
-         * provide it for us.
-         */
-        add_theme_support('title-tag');
-
-        /*
-         * Enable support for Post Thumbnails on posts and pages.
-         *
-         * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
-         */
-        add_theme_support('post-thumbnails');
-
-        // This theme uses wp_nav_menu() in one location.
-        register_nav_menus(array(
-            'primary' => esc_html__('Primary Menu', 'angular-material'),
-        ));
-
-        /*
-         * Switch default core markup for search form, comment form, and comments
-         * to output valid HTML5.
-         */
-        add_theme_support('html5', array(
-            'search-form',
-            'comment-form',
-            'comment-list',
-            'gallery',
-            'caption',
-        ));
-
-        /*
-         * Enable support for Post Formats.
-         * See https://developer.wordpress.org/themes/functionality/post-formats/
-         */
-        add_theme_support('post-formats', array(
-            'aside',
-            'image',
-            'video',
-            'quote',
-            'link',
-        ));
     }
 
     /**
@@ -105,7 +46,7 @@ class themeCustomizer
             )
         );
 
-        $header_font_color = new \WP_Customize_Color_Control(
+        $footer_font_color = new \WP_Customize_Color_Control(
             $wp_customize,
             'header_font_color_ctrl',
             array(
@@ -114,8 +55,27 @@ class themeCustomizer
                 'settings' => 'header_font_color',
             )
         );
+        $wp_customize->add_control($footer_font_color);
 
-        $wp_customize->add_control($header_font_color);
+        $wp_customize->add_setting(
+            'footer_font_color',
+            array(
+                'default'   => '#FFFFFF',
+                'transport' => 'postMessage'
+            )
+        );
+
+        $footer_font_color = new \WP_Customize_Color_Control(
+            $wp_customize,
+            'footer_font_color_ctrl',
+            array(
+                'label' => __('Footer Font Color', 'angular-material'),
+                'section' => 'colors',
+                'settings' => 'footer_font_color',
+            )
+        );
+        $wp_customize->add_control($footer_font_color);
+
         $wp_customize->get_setting('blogname')->transport = 'postMessage';
         $wp_customize->get_setting('blogdescription')->transport = 'postMessage';
     }
@@ -135,6 +95,9 @@ class themeCustomizer
             }
             .site-description{
                 color: <?php echo get_theme_mod('header_font_color', '#000000'); ?>;
+            }
+            #footer_content{
+                color: <?php echo get_theme_mod('footer_font_color', '#000000'); ?>;
             }
         </style><?php
     }
