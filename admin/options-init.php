@@ -99,17 +99,16 @@ $palettes = array(
         '#B71C1C'
     ),
     'pink' => array(
-        '#FFEBEE',
-        '#FFCDD2',
-        '#EF9A9A',
-        '#E57373',
-        '#EF5350',
-        '#F44336',
-        '#E53935',
-        '#D32F2F',
-        '#C62828',
-        '#B71C1C',
-        '#FCE4EC'
+        '#FCE4EC',
+        '#F8BBD0',
+        '#F48FB1',
+        '#F06292',
+        '#EC407A',
+        '#E91E63',
+        '#D81B60',
+        '#C2185B',
+        '#AD1457',
+        '#880E4F'
     ),
     'purple' => array(
         '#F3E5F5',
