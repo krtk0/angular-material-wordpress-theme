@@ -19,6 +19,34 @@ class themeCustomizer
      */
     public function customize_register($wp_customize)
     {
+        $this->theme_colors($wp_customize);
+
+        $wp_customize->add_setting(
+            'header_icon',
+            array('default' => '')
+        );
+        $wp_customize->add_control(
+            new \WP_Customize_Image_Control(
+                $wp_customize,
+                'logo',
+                array(
+                    'label' => __( 'Upload a logo', '' ),
+                    'section' => 'title_tagline',
+                    'settings' => 'header_icon'
+                )
+            )
+        );
+
+        $wp_customize->get_setting('blogname')->transport = 'postMessage';
+        $wp_customize->get_setting('blogdescription')->transport = 'postMessage';
+    }
+
+    /**
+     * Adds controls for picking colors for the theme
+     * @param $wp_customize
+     */
+    private function theme_colors($wp_customize)
+    {
         $wp_customize->add_setting(
             'title_font_color',
             array(
@@ -75,10 +103,8 @@ class themeCustomizer
             )
         );
         $wp_customize->add_control($footer_font_color);
-
-        $wp_customize->get_setting('blogname')->transport = 'postMessage';
-        $wp_customize->get_setting('blogdescription')->transport = 'postMessage';
     }
+
     /**
      * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
      */
@@ -119,7 +145,6 @@ class themeCustomizer
             'after_title' => '</h2>',
         ));
     }
-
 
     /**
      * Enqueue scripts and styles.

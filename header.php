@@ -27,12 +27,17 @@ global $material;?>
 <body <?php body_class(); ?> ng-app="MaterialThemeApp">
 <div id="page" layout="column">
 	<md-toolbar layout="row" layout-xs="column" layout-align="space-between center">
-		<div class="site-branding" layout="column" layout-margin>
-			<?php if ( is_front_page() || is_home()) : ?>
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-			<?php else : ?>
-				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-			<?php endif; ?>
+		<div class="site-branding" layout="column" layout-margin><?php
+			$header_icon = get_theme_mod('header_icon');
+			if(is_front_page() || is_home()){
+				if(empty($header_icon)){?>
+					<h1 class="site-title"><a href="<?php echo esc_url(home_url('/')); ?>" rel="home"><?php bloginfo('name'); ?></a></h1><?php
+				}else{?>
+					<h1 class="site-title"><a href="<?php echo esc_url(home_url('/')); ?>" rel="home"><img id="header_icon" src="<?php echo $header_icon;?>" /></a></h1><?php
+				}
+			}else{?>
+				<p class="site-title"><a href="<?php echo esc_url(home_url('/')); ?>" rel="home"><?php bloginfo('name'); ?></a></p><?php
+			}?>
 			<div class="site-description"><?php bloginfo( 'description' ); ?></div>
 		</div><!-- .site-branding -->
 		<div ng-controller="MenuCtrl as ctrl"><?php
