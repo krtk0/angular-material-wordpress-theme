@@ -19,10 +19,20 @@ a {
   text-decoration: none;
 }
 
+.content-area {
+  margin: 0 auto;
+  width: 90%;
+}
+
 #footer_content {
   margin-top: 10px;
 }
 
 .md-card-image {
   max-width: 80vw;
+}
+
+.md-card-image img {
+  max-height: 250px;
+  width: auto;
 }

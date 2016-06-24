@@ -29,14 +29,24 @@ global $material;?>
 	<md-toolbar layout="row" layout-xs="column" layout-align="space-between center">
 		<div class="site-branding" layout="column" layout-margin><?php
 			$header_icon = get_theme_mod('header_icon');
-			if(is_front_page() || is_home()){
-				if(empty($header_icon)){?>
-					<h1 class="site-title"><a href="<?php echo esc_url(home_url('/')); ?>" rel="home"><?php bloginfo('name'); ?></a></h1><?php
+			if(empty($header_icon)){
+				if (is_front_page() || is_home()) {?>
+					<h1 class="site-title">
+						<a href="<?php echo esc_url(home_url('/')); ?>" rel="home"><?php
+							bloginfo('name'); ?>
+						</a>
+					</h1><?php
 				}else{?>
-					<h1 class="site-title"><a href="<?php echo esc_url(home_url('/')); ?>" rel="home"><img id="header_icon" src="<?php echo $header_icon;?>" /></a></h1><?php
+					<p class="site-title">
+						<a href="<?php echo esc_url(home_url('/')); ?>" rel="home"><?php bloginfo('name'); ?></a>
+					</p><?php
 				}
 			}else{?>
-				<p class="site-title"><a href="<?php echo esc_url(home_url('/')); ?>" rel="home"><?php bloginfo('name'); ?></a></p><?php
+				<h1 class="site-title">
+					<a href="<?php echo esc_url(home_url('/')); ?>" rel="home">
+						<img id="header_icon" src="<?php echo $header_icon; ?>"/>
+					</a>
+				</h1><?php
 			}?>
 			<div class="site-description"><?php bloginfo( 'description' ); ?></div>
 		</div><!-- .site-branding -->
@@ -57,8 +67,8 @@ global $material;?>
 				<md-button aria-label="Open primary menu" ng-click="ctrl.openMenu($mdOpenMenu, $event)">
 					Primary Menu
 				</md-button>
-				<md-menu-content width="4">
-					<?php echo $menu;?>
+				<md-menu-content width="4"><?php
+					echo $menu;?>
 				</md-menu-content>
 			</md-menu>
 
